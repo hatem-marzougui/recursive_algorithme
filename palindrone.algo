@@ -1,0 +1,18 @@
+FUNCTION palindrome(str,i,l) : BOOLEAN
+VAR
+ str:  STRING
+ i,l:  INTEGER
+BEGIN
+  /* Stop condition: an empty word or a word containing a single character is a palindrome.*/
+    IF (str="" OR str.length=1)  THEN
+        RETURN TRUE
+
+/*if the first character is different to the last character is not palindrome */
+    ELSE_IF (str[i] != str[l]) THEN
+        RETURN FALSE
+ 
+    ELSE
+        RETURN palindrome(str,i+1,l-1)
+    END_IF
+   
+END
